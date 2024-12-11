@@ -40,8 +40,7 @@
 <!-- BEGIN HEADER -->
 <div class="header">
 	<div class="container">
-		<a class="site-logo" href="${pageContext.request.contextPath}/home"><img
-			src="${URL}assets/img/logo/logoute.jpg" alt="Furniture Shop UI"></a>
+		<a class="site-logo" href="${pageContext.request.contextPath}/home"><img src="${URL}assets/img/logo/logoute2.png" alt="Furniture Shop UI" style="width: 150px; height: auto;"></a>
 		<a href="javascript:void(0);" class="mobi-toggler"><i
 			class="fa fa-bars"></i></a>
 

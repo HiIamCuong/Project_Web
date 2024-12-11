@@ -5,8 +5,8 @@ public class Constant {
 	public static final String COOKIE_REMEMBER = "email";
 	
 	//Email trang web
-	public static final String FROM_EMAIL = "cozyconnerweb@gmail.com";
-	public static final String PASSWORD_EMAIL = "tbud beee artb jzbt";
+	public static final String FROM_EMAIL = "22133010@student.hcmute.edu.vn";
+	public static final String PASSWORD_EMAIL = "PNDuog@5432106#";
 
 	//Địa chỉ file .jsp
 	public static final String HOME = "/views/home.jsp";
