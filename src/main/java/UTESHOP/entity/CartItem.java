@@ -33,7 +33,10 @@ public class CartItem implements Serializable {
 	
 	@Column(name = "quantity")
 	private int quantity;
-
+	
+	@Column(name = "size", columnDefinition = "NVARCHAR(100) NULL")
+	private String size;
+	
 	public CartItem() {
 	}
 
@@ -68,4 +71,13 @@ public class CartItem implements Serializable {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+	
 }

@@ -36,6 +36,9 @@ public class OrderDetail implements Serializable {
 	@Column(name = "price")
     private int price;
     
+	@Column(name = "size", columnDefinition = "NVARCHAR(100) NULL")
+	private String size;
+	
     public OrderDetail() {
     }
 
@@ -57,6 +60,14 @@ public class OrderDetail implements Serializable {
 
 	public Product getProduct() {
 		return product;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
 	}
 
 	public void setProduct(Product product) {

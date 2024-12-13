@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!-- BEGIN CONTENT -->
 <div class="col-md-12 col-sm-12">
@@ -43,7 +43,7 @@
                             <div class="tab-content">
                                <!-- PERSONAL INFO TAB -->
 								<div class="tab-pane active" id="tab_1_1">
-								    <form id="personalInfoForm" role="form" action="${pageContext.request.contextPath}/myaccount" method="post">
+								    <form id="personalInfoForm" role="form" action="" method="post">
 								        <div class="form-group">
 								            <label for="email">Email:</label>
 								            <input type="email" id="email" name="email" class="form-control" value="${sessionScope.account.email}" readonly />
@@ -84,12 +84,16 @@
 
                                  <!-- CHANGE AVATAR TAB -->
                                 <div class="tab-pane" id="tab_1_2">
-                                    <form action="${pageContext.request.contextPath}/uploadAvatar" method="post" enctype="multipart/form-data" role="form">
+                                    <form action="${pageContext.request.contextPath}/admin/uploadAvatar" method="post" enctype="multipart/form-data" role="form">
                                         <div class="form-group">
                                             <div class="fileinput fileinput-new" data-provides="fileinput">
                                                 <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
                                                     <img id="avatarPreview" src="${pageContext.request.contextPath}/${sessionScope.account.image}" alt="User Avatar" />
                                                 </div>
+                                                <div class="form-group">
+								            <label class="control-label">City</label>
+								            <input type="text" name="city" value="${sessionScope.account.role.name}" class="form-control" id="city"/>
+								        </div>
                                                 <div>
                                                     <span class="btn default btn-file">
                                                         <span class="fileinput-new">Select image</span>
@@ -165,14 +169,14 @@
             </div>
         </div>
         <hr>
-        <h3>My Orders</h3>
+       <!--  <h3>My Orders</h3>
         <ul>
             <li><a href="#">View your order history</a></li>
             <li><a href="#">Downloads</a></li>
             <li><a href="#">Your Reward Points</a></li>
             <li><a href="#">View your return requests</a></li>
             <li><a href="#">Your Transactions</a></li>
-        </ul>
+        </ul> -->
     </div>
 </div>
 <!-- END CONTENT -->
@@ -297,5 +301,14 @@
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?_&])[A-Za-z\d@$!%*?_&]{8,}$/;
         return passwordRegex.test(password);
     }
-    
+ // Lấy form và vai trò người dùng từ server
+    const form = document.getElementById('personalInfoForm');
+    const userRole = '${sessionScope.account.role}'; // Lấy giá trị role từ server-side
+
+    // Thay đổi action dựa trên role
+    if (userRole === 'Admin') {
+        form.action = '${pageContext.request.contextPath}/admin/myaccount';
+    } else if (userRole === 'User')  {
+        form.action = '${pageContext.request.contextPath}/myaccount';
+    }
 </script>

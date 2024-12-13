@@ -25,14 +25,14 @@ public class Cart implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cart_id")
 	private int cart_id;
-
+	
 	@OneToOne
 	@JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
 	private User user;
 
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<CartItem> cartItems;
-
+	
 	public Cart() {
 	}
 
@@ -59,4 +59,5 @@ public class Cart implements Serializable {
 	public void setCartItems(Set<CartItem> cartItems) {
 		this.cartItems = cartItems;
 	}
+	
 }

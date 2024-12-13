@@ -152,6 +152,7 @@ public class CheckoutController extends HttpServlet {
 				orderDetail.setQuantity(x.getQuantity());
 				orderDetail.setOrder(newOrder);
 				orderDetail.setPrice(x.getProduct().getPrice());
+				orderDetail.setSize(x.getSize());
 				detailService.insert(orderDetail);
 			}
 			

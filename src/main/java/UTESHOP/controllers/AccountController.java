@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = { "/myaccount"})
+@WebServlet(urlPatterns = { "/myaccount","/admin/myaccount"})
 public class AccountController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public IUserService userService = new UserService();
@@ -54,12 +54,12 @@ public class AccountController extends HttpServlet {
 //            req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
 //            return;
 //        }
-        if (!phone.equals(user.getPhone()) && userService.checkExistPhone(phone)) {
-            alertMsg = "Phone number is already in use!";
-            req.setAttribute("alert", alertMsg);
-            req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
-            return;
-        }
+//        if (!phone.equals(user.getPhone()) && userService.checkExistPhone(phone)) {
+//            alertMsg = "Phone number is already in use!";
+//            req.setAttribute("alert", alertMsg);
+//            req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+//            return;
+//        }
 
      // Cập nhật thông tin người dùng
         user.setEmail(email);

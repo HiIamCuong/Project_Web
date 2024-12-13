@@ -107,9 +107,7 @@
 												<td class="goods-page-description">
 													<p>Material: ${cartItem.product.material}</p>
 													<p>Color: ${cartItem.product.color}</p>
-													<p>Size: height: ${cartItem.product.height} - length:
-														${cartItem.product.length} - width:
-														${cartItem.product.width}</p>
+													<p>Size: height: ${cartItem.size}</p>
 												</td>
 												<td class="goods-page-price"><p>${cartItem.quantity}</p></td>
 												<td class="goods-page-price"><p>${cartItem.product.price}</p>
