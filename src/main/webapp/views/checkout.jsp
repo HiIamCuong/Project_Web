@@ -14,7 +14,6 @@
 				<!-- BEGIN CHECKOUT PAGE -->
 				<div class="panel-group checkout-page accordion scrollable"
 					id="checkout-page">
-
 					<div class="panel-body row">
 						<div class="col-md-6 col-sm-6">
 							<div class="goods-page">
@@ -80,20 +79,21 @@
 						</div>
 					</div>
 
-					<div class="panel-body row">
-						<div class="goods-page">
+					<div class="panel-body row ">
+						<div class="goods-page"
+							style="padding-right: 15px; padding-left: 15px;">
 							<div class="goods-data clearfix">
 								<div class="table-wrapper-responsive">
 									<h3>Products</h3>
-									<table summary="Shopping cart">
+									<table>
+										<tr>
+											<th class="goods-page-image">Image</th>
+											<th class="goods-page-description">Description</th>
+											<th class="goods-page-quantity">Quantity</th>
+											<th class="goods-page-price">Unit price</th>
+											<th class="goods-page-total">Total</th>
+										</tr>
 										<c:forEach var="cartItem" items="${listCartItem}">
-											<tr>
-												<th class="goods-page-image">Image</th>
-												<th class="goods-page-description">Description</th>
-												<th class="goods-page-quantity">Quantity</th>
-												<th class="goods-page-price">Unit price</th>
-												<th class="goods-page-total">Total</th>
-											</tr>
 											<tr>
 												<td class="goods-page-image"><a href="#"> <c:if
 															test="${cartItem.product.image.substring(0,5) != 'https'}">
@@ -108,7 +108,8 @@
 													<p>Material: ${cartItem.product.material}</p>
 													<p>Color: ${cartItem.product.color}</p>
 													<p>Size: height: ${cartItem.product.height} - length:
-														${cartItem.product.length} - width: ${cartItem.product.width}</p>
+														${cartItem.product.length} - width:
+														${cartItem.product.width}</p>
 												</td>
 												<td class="goods-page-price"><p>${cartItem.quantity}</p></td>
 												<td class="goods-page-price"><p>${cartItem.product.price}</p>
@@ -122,9 +123,9 @@
 							</div>
 						</div>
 						<form action="${pageContext.request.contextPath}/order"
-							method="post">
+							id="orderForm" method="post">
 							<input type="hidden" name="user_id" id="user_id"
-														value="${sessionScope.account.id}">
+								value="${sessionScope.account.id}">
 							<div class="panel-body row">
 								<div class="col-md-6 col-sm-6">
 									<div class="goods-page">
@@ -133,22 +134,21 @@
 												<h3>Payment Methods</h3>
 												<table summary="Shopping cart">
 													<c:forEach var="payment" items="${listPayment}">
-														<c:if test="${payment.status == 1 }">
-															<tr>
-																<td class="goods-page-image"><c:if
-																		test="${payment.image.substring(0,5) != 'https'}">
-																		<c:url value="/image?fname=${payment.image}"
-																			var="imgUrl"></c:url>
-																	</c:if> <c:if
-																		test="${payment.image.substring(0,5) == 'https'}">
-																		<c:url value="${payment.image}" var="imgUrl"></c:url>
-																	</c:if> <img src="${imgUrl}" alt="${payment.name}"
-																	style="height: 40px; width: 40px; margin-left: 50px;"></td>
-																<td>${payment.name}</td>
-																<td><input type="radio" name="payment"
-																	value="${payment.payment_id}" style="float: right;"></td>
-															</tr>
-														</c:if>
+														<tr>
+															<td class="goods-page-image"><c:if
+																	test="${payment.image.substring(0,5) != 'https'}">
+																	<c:url value="/image?fname=${payment.image}"
+																		var="imgUrl"></c:url>
+																</c:if> <c:if test="${payment.image.substring(0,5) == 'https'}">
+																	<c:url value="${payment.image}" var="imgUrl"></c:url>
+																</c:if> <img src="${imgUrl}" alt="${payment.bankName}"
+																style="height: 40px; width: 40px; margin-left: 50px;"></td>
+															<td>${payment.bankName}</td>
+															<td><input type="radio" name="payment"
+																value="${payment.id}" style="float: right;"></td>
+														</tr>
+														<div id="paymentError" class="error-message"
+															style="color: red; font-style: italic; font-size: 12px;"></div>
 													</c:forEach>
 												</table>
 											</div>
@@ -159,41 +159,21 @@
 									<div class="goods-page">
 										<div class="goods-data clearfix">
 											<div class="table-wrapper-responsive">
-												<h3>Shipping Option</h3>
-												<br>
-												<div class="radio-list" style="margin-left: 20px">
-													<label> <input type="radio" name="standardExpress"
-														value="standardExpress" checked disabled> Standard
-														express (free)
-													</label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="panel-body row">
-								<div class="col-md-6 col-sm-6">
-									<div class="goods-page">
-										<div class="goods-data clearfix">
-											<div class="table-wrapper-responsive">
 												<h3>Platform Vouchers</h3>
-												<c:if test="${empty listDiscount}">
+												<c:if test="${empty listPromote}">
 													<br>
 													<p style="margin-left: 20px">No discount is available!</p>
 												</c:if>
-												<c:if test="${!empty listDiscount}">
+												<c:if test="${!empty listPromote}">
 													<table summary="Shopping cart">
-														<c:forEach var="discount" items="${listDiscount}">
+														<c:forEach var="promote" items="${listPromote}">
 															<tr>
 																<td>
-																	<p style="font-weight: bold;">${discount.discountName}</p>
-																	<p>${discount.description}</p>
+																	<p>${promote.voucherCode}</p>
 																</td>
-																<td><input type="radio" name="discount"
-																	value="${discount.discountId}"
-																	onchange="clickDiscount(${discount})"
+																<td><input type="radio" name="promote"
+																	value="${promote.id}"
+																	onchange="clickDiscount(${promote.discountPercent})"
 																	style="float: right;"></td>
 															</tr>
 														</c:forEach>
@@ -203,51 +183,77 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-6">
-									<div class="goods-page">
-										<div class="goods-data clearfix">
-											<div class="table-wrapper-responsive">
-												<h3>Order notes</h3>
-												<textarea id="note" rows="8"
-													class="form-control"></textarea>
-											</div>
-										</div>
+							</div>
+					</div>
+
+					<div class="panel-body row">
+						<div class="col-md-12 col-sm-12">
+							<div class="goods-page">
+								<div class="goods-data clearfix">
+									<div class="table-wrapper-responsive">
+										<h3>Order notes</h3>
+										<textarea type="text" id="noteOrder" name="noteOrder" rows="8"
+											class="form-control"></textarea>
 									</div>
 								</div>
 							</div>
-
-							<div class="checkout-total-block">
-								<h3>Payment Details</h3>
-								<ul>
-									<li><em>Sub total</em> <strong class="price"
-										name="subTotal" id="subTotal">${total}</strong></li>
-									<li><em>Shipping cost</em> <strong class="price">0</strong>
-									</li>
-									<li><em>Voucher</em> <strong class="price"
-										id="priceDiscount" name="priceDiscount">- 0</strong></li>
-									<li class="checkout-total-price"><em>Total</em> <strong
-										class="price">56.00</strong></li>
-								</ul>
-							</div>
-							<div class="clearfix"></div>
-							<button class="btn btn-primary pull-right" type="submit"
-								id="button-confirm"
-								style="margin-right: 0px; background: black;">Confirm
-								Order</button>
-							<button type="button" onclick="cancelOrder()"
-								class="btn btn-default pull-right margin-right-20">Cancel</button>
-						</form>
+						</div>
 					</div>
-					<!-- END CHECKOUT PAGE -->
+
+					<div class="checkout-total-block">
+						<h3>Payment Details</h3>
+						<ul>
+							<li><em>Sub total</em> <strong class="price" name="subTotal"
+								id="subTotal">${total}</strong></li>
+							<li><em>Voucher</em> <strong class="price"
+								id="priceDiscount" name="priceDiscount">- 0</strong></li>
+							<li><em>Shipping cost</em> <strong class="price">0</strong>
+							</li>
+							<li class="checkout-total-price"><em>Total</em> <strong
+								class="price" id="total" name="total">${total}</strong></li>
+						</ul>
+						<input type="hidden" name="total_price" id="total_price"
+							value="${total}">
+					</div>
+					<div class="clearfix"></div>
+					<button class="btn btn-primary pull-right" type="submit"
+						id="button-confirm" style="margin-right: 0px; background: black;">Confirm
+						Order</button>
+					<button type="button" onclick="cancelOrder()"
+						class="btn btn-default pull-right margin-right-20">Cancel</button>
+					</form>
 				</div>
+				<!-- END CHECKOUT PAGE -->
 			</div>
-			<!-- END CONTENT -->
 		</div>
-		<!-- END SIDEBAR & CONTENT -->
+		<!-- END CONTENT -->
 	</div>
+	<!-- END SIDEBAR & CONTENT -->
 </div>
 
 <script>
+
+document.getElementById("orderForm").addEventListener("submit", function (event) {
+    const paymentMethods = document.getElementsByName("payment");
+    let isChecked = false;
+
+    // Kiểm tra xem có radio nào được chọn hay không
+    for (let i = 0; i < paymentMethods.length; i++) {
+        if (paymentMethods[i].checked) {
+            isChecked = true;
+            break;
+        }
+    }
+
+    const errorDiv = document.getElementById("paymentError");
+    if (!isChecked) {
+        event.preventDefault();
+        errorDiv.textContent = "Please select a payment method!";
+    } else {
+        errorDiv.textContent = "";
+    }
+});
+
 	function modify() {
 		var div1 = document.getElementById("myDiv1");
 		var div2 = document.getElementById("myDiv2");
@@ -271,20 +277,29 @@
 			div1.style.display = "block";
 		}
 	}
-	function clickDiscount(discount) {
-		const subTotalElement = document.getElementById('subTotal');
-		const subTotalString = subTotalElement.textContent.trim();
-		const subTotal = parseFloat(subTotalString); // Loại bỏ ký hiệu '$' và chuyển đổi thành số
-
-		const percentage = parseFloat(discount.percentage); // Chuyển đổi phần trăm từ chuỗi thành số và chia 100
-		const discountAmount = subTotal * percentage; // Tính số tiền giảm giá
-
-		updatePrice(discountAmount); // Cập nhật giá trị giảm giá vào giao diện
+	function clickDiscount(discountPercent) {
+	    const subTotalElement = document.getElementById("subTotal");
+	    const subTotalString = subTotalElement.textContent.trim();
+	    const subTotal = parseInt(subTotalString);
+	    
+	    const percentage = parseInt(discountPercent);
+	    const discountAmount = subTotal * (percentage / 100);
+	    const total = subTotal - discountAmount;
+	    
+	    updatePrice(total, discountAmount);
 	}
 
-	function updatePrice(newPrice) {
-		const priceDiscountElement = document.getElementById('priceDiscount');
-		priceDiscountElement.textContent = `- ${newPrice}`; // Định dạng giá với 2 chữ số thập phân
+	function updatePrice(total, discountAmount) {
+	    let totalString = String(total);
+	    let discountString = "- " + String(discountAmount);
+
+	    let totalElement1 = document.getElementById("total");
+	    let totalElement2 = document.getElementById("total_price");
+	    let priceDiscountElement = document.getElementById("priceDiscount");
+		
+	    totalElement1.textContent = totalString;
+	    totalElement2.value = totalString;
+	    priceDiscountElement.textContent = discountString;
 	}
 
 	function cancelOrder() {
