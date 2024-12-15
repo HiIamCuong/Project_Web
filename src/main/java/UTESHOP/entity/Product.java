@@ -53,14 +53,20 @@ public class Product implements Serializable {
 	private LocalDateTime createDate;
 	
 	//Thêm các thuộc tính vào để so sanh
-	@Column(name = "color", columnDefinition = "NVARCHAR(50) NULL")
-	private String color;
-	
-	@Column(name = "material", columnDefinition = "NVARCHAR(100) NULL")
-	private String material;
-	
-	@Column(name = "size", columnDefinition = "NVARCHAR(100) NULL")
-	private String size;
+		@Column(name = "color", columnDefinition = "NVARCHAR(50) NULL")
+		private String color;
+		
+		@Column(name = "material", columnDefinition = "NVARCHAR(100) NULL")
+		private String material;
+		
+		@Column(name = "height")
+		private float height;
+		
+		@Column(name = "length")
+		private float length;
+		
+		@Column(name = "width")
+		private float width;
 	
 	
 	// bi-directional many-to-one association to Category
@@ -178,12 +184,28 @@ public class Product implements Serializable {
 		this.material = material;
 	}
 	
-	public String getSize() {
-		return size;
+	public float getHeight() {
+		return height;
 	}
 
-	public void setSize(String size) {
-		this.size = size;
+	public void setHeight(float height) {
+		this.height = height;
+	}
+
+	public float getLength() {
+		return length;
+	}
+
+	public void setLength(float length) {
+		this.length = length;
+	}
+
+	public float getWidth() {
+		return width;
+	}
+
+	public void setWidth(float width) {
+		this.width = width;
 	}
 
 	public Category getCategory() {

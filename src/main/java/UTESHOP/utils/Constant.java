@@ -23,5 +23,5 @@ public class Constant {
 	public static final String ORDER_SUCCESS = "/views/orderSuccess.jsp";
 	public static final String UPLOAD_DIRECTORY = "C:\\upload";
 	public static final String DEFAULT_FILENAME = "default.file";
-
+	public static final String PRODUCTS = "/views/shop-item.jsp";
 }
