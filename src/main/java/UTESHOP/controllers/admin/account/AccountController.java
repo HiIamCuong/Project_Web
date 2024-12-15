@@ -1,4 +1,4 @@
-package UTESHOP.controllers;
+package UTESHOP.controllers.admin.account;
 
 import java.io.IOException;
 
@@ -14,13 +14,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = { "/myaccount"})
+@WebServlet(urlPatterns = { "/admin/myaccount"})
 public class AccountController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public IUserService userService = new UserService();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+		req.getRequestDispatcher(Constant.ACCOUNT_ADMIN).forward(req, resp);
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,7 +33,7 @@ public class AccountController extends HttpServlet {
         if (user == null) {
             String alertMsg = "User not logged in!";
             req.setAttribute("alert", alertMsg);
-            req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+            req.getRequestDispatcher(Constant.ACCOUNT_ADMIN).forward(req, resp);
             return;
         }
 
@@ -82,7 +82,7 @@ public class AccountController extends HttpServlet {
         alertMsg = "Profile updated successfully!";
         session.setAttribute("account", user);
         req.setAttribute("alert", alertMsg);
-        req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+        req.getRequestDispatcher(Constant.ACCOUNT_ADMIN).forward(req, resp);
 	}
 
 }

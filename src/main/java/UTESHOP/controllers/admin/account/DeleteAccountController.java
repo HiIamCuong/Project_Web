@@ -1,4 +1,4 @@
-package UTESHOP.controllers;
+package UTESHOP.controllers.admin.account;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = { "/deleteAccount"})
+@WebServlet(urlPatterns = { "/admin/deleteAccount"})
 public class DeleteAccountController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -29,7 +29,7 @@ public class DeleteAccountController extends HttpServlet {
 	        if (user == null) {
 	            String alertMsg = "User not logged in!";
 	            req.setAttribute("alert", alertMsg);
-	            req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+	            req.getRequestDispatcher(Constant.ACCOUNT_ADMIN).forward(req, resp);
 	            return;
 	        }
             
