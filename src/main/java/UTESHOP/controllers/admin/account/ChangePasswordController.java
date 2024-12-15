@@ -1,4 +1,4 @@
-package UTESHOP.controllers;
+package UTESHOP.controllers.admin.account;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet(urlPatterns = {"/changePassword"})
+@WebServlet(urlPatterns = {"/admin/changePassword"})
 public class ChangePasswordController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private IUserService userService = new UserService(); // Tạo đối tượng UserService
@@ -29,7 +29,7 @@ public class ChangePasswordController extends HttpServlet {
         if (user == null) {
             String alertMsg = "User not logged in!";
             req.setAttribute("alert", alertMsg);
-            req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+            req.getRequestDispatcher(Constant.ACCOUNT_ADMIN).forward(req, resp);
             return;
         }
 
@@ -44,7 +44,7 @@ public class ChangePasswordController extends HttpServlet {
         if (!userService.checkPassword(user.getEmail(), currentPassword)) {
             alertMsg = "Current password is incorrect!";
             req.setAttribute("alert", alertMsg);
-            req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+            req.getRequestDispatcher(Constant.ACCOUNT_ADMIN).forward(req, resp);
             return;
         }
 
@@ -52,7 +52,7 @@ public class ChangePasswordController extends HttpServlet {
         if (!newPassword.equals(retypeNewPassword)) {
         	alertMsg = "New password and retype password do not match!";
         	req.setAttribute("alert", alertMsg);
-            req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+            req.getRequestDispatcher(Constant.ACCOUNT_ADMIN).forward(req, resp);
             return;
         }
         // Cập nhật thông tin người dùng        
@@ -64,7 +64,7 @@ public class ChangePasswordController extends HttpServlet {
         alertMsg = "Your new password updated successfully!";
         session.setAttribute("account", user);
         req.setAttribute("alert", alertMsg);
-        req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+        req.getRequestDispatcher(Constant.ACCOUNT_ADMIN).forward(req, resp);
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

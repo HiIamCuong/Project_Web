@@ -1,4 +1,4 @@
-package UTESHOP.controllers;
+package UTESHOP.controllers.admin.account;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
 
-@WebServlet(urlPatterns = {"/uploadAvatar"})
+@WebServlet(urlPatterns = {"/admin/uploadAvatar"})
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 2, // 2MB
         maxFileSize = 1024 * 1024 * 10, // 10MB
@@ -60,7 +60,7 @@ public class UploadAvatarController extends HttpServlet {
 
         session.setAttribute("account", user);
         req.setAttribute("alert", "Your Avatar Profile updated successfully!");
-        req.getRequestDispatcher(Constant.ACCOUNT).forward(req, resp);
+        req.getRequestDispatcher(Constant.ACCOUNT_ADMIN).forward(req, resp);
     }
 
 	private String extractFileName(Part part) {

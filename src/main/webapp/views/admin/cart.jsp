@@ -57,7 +57,7 @@
 											<td>
 											    <a href="javascript:void(0);" onclick="updateQuantity('${cartItem.cartItem_id}', this)">&#8635</a>
 											</td>
-											<td class="del-goods-col"><a class="del-goods" href="<c:url value='/delete?id=${cartItem.cartItem_id }'/>">&nbsp;</a>
+											<td class="del-goods-col"><a class="del-goods" href="<c:url value='/admin/delete?id=${cartItem.cartItem_id }'/>">&nbsp;</a>
 											</td>
 										</tr>
 									</c:forEach>
@@ -93,15 +93,15 @@
 	function updateQuantity(cartItemId, link) {
 	    const quantityInput = link.closest('tr').querySelector('input[type="text"]');
 	    const quantity = quantityInput.value;
-	    window.location.href = '${pageContext.request.contextPath}/update?id=' + cartItemId + '&quantity=' + quantity;
+	    window.location.href = '${pageContext.request.contextPath}/admin/update?id=' + cartItemId + '&quantity=' + quantity;
 	}
 	function deleteCart() {
-        window.location.href = '${pageContext.request.contextPath}/remove'; // Chuyển hướng đến trang deletecart
+        window.location.href = '${pageContext.request.contextPath}/admin/remove'; // Chuyển hướng đến trang deletecart
     }
     function continueShopping() {
-        window.location.href = '${pageContext.request.contextPath}/home'; // Chuyển hướng đến trang product
+        window.location.href = '${pageContext.request.contextPath}/admin/home'; // Chuyển hướng đến trang product
     }
     function checkout() {
-        window.location.href = '${pageContext.request.contextPath}/checkout'; // Chuyển hướng đến trang thanh toán
+        window.location.href = '${pageContext.request.contextPath}/admin/checkout'; // Chuyển hướng đến trang thanh toán
     }
 </script>

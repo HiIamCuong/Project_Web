@@ -8,7 +8,7 @@
 }
 </style>
 </head>
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <!-- DangNhap, DangKy -->
 <!-- BEGIN TOP BAR -->
 <div class="pre-header">
@@ -37,49 +37,36 @@
 <!-- BEGIN HEADER -->
 <div class="header">
 	<div class="container">
-		<a class="site-logo" href="shop-index.html"><img
-			src="${URL}assets/frontend/layout/img/logos/logo.png"
-			alt="Furniture Shop UI"></a> <a href="javascript:void(0);"
+		<a class="site-logo" href="${pageContext.request.contextPath}/admin/home"><img src="${URL}assets/img/logo/logoute.png" alt="Furniture Shop UI" style="width: 150px; height: auto;"></a> 
+			<a href="javascript:void(0);"
 			class="mobi-toggler"><i class="fa fa-bars"></i></a>
 
 		<!-- BEGIN CART -->
 		<div class="top-cart-block">
-			<div class="top-cart-info">
-				<a href="javascript:void(0);" class="top-cart-info-count">n
-					items</a>
-			</div>
-			<i class="fa fa-shopping-cart" style="background-color: black"></i>
-
-			<div class="top-cart-content-wrapper">
-				<div class="top-cart-content" style="border: black">
-					<ul class="scroller" style="height: 250px;">
-						<li><a href="shop-item.html"> <img
-								src="${URL}assets/frontend/pages/img/cart-img.jpg"
-								alt="Rolex Classic Watch" width="37" height="34"></a> <span
-							class="cart-content-count">x 1</span> <strong> <a
-								href="shop-item.html">Rolex Classic Watch</a>
-						</strong> <em>$1230</em> <a href="javascript:void(0);" class="del-goods">&nbsp;
-						</a></li>
-					</ul>
-					<div class="text-right">
-						<a href="shop-shopping-cart.html" class="btn btn-default"
-							style="background-color: black">View Cart</a> <a
-							href="shop-checkout.html" class="btn btn-primary"
-							style="background-color: black">Checkout</a>
-					</div>
-				</div>
-			</div>
+		    <div class="top-cart-info">
+		        <c:choose>
+		            <c:when test="${sessionScope.cartItemCount != null && sessionScope.cartItemCount > 0}">
+		                <a href="${pageContext.request.contextPath}/admin/cart"
+		                   class="top-cart-info-count">${sessionScope.cartItemCount} items</a>
+		            </c:when>
+		            <c:otherwise>
+		                <a href="${pageContext.request.contextPath}/admin/cart"
+		                   class="top-cart-info-count">0 items</a>
+		            </c:otherwise>
+		        </c:choose>
+		    </div>
+		    <i class="fa fa-shopping-cart" style="background-color: black"></i>
 		</div>
-		<!--END CART -->
+		<!-- END CART -->
 
 		<!-- BEGIN NAVIGATION -->
 		<div class="header-navigation">
 			<ul>
-				<li><a href="#"> Product Management </a>
+				<li><a href="${pageContext.request.contextPath}/admin/product"> Product Management </a>
 					<ul class="dropdown-menu">
-						<li><a href="/kiemtraJDBC/views/admin/categorylist.jsp">View
+						<li><a href="${pageContext.request.contextPath}/admin/product">View
 								Products</a></li>
-						<li><a href="/kiemtraJDBC/views/admin/categoryadd.jsp">Add Products</a></li>
+						<li><a href="${pageContext.request.contextPath}/admin/product/add">Add Products</a></li>
 					</ul></li>
 
 				<li><a href="#"> Order Management </a>
@@ -88,10 +75,10 @@
 						<li><a href="/kiemtraJDBC/views/admin/categoryadd.jsp">Add Orders?nên có cái này ko? (Mi)</a></li>
 						<li><a href="/kiemtraJDBC/views/admin/categoryedit.jsp"></a></li>
 					</ul></li>
-				<li><a href="#"> Customer Management </a>
+				<li><a href="${pageContext.request.contextPath}/admin/user"> User Management </a>
 					<ul class="dropdown-menu">
-						<li><a href="/kiemtraJDBC/views/admin/categorylist.jsp">View Customers</a></li>
-						
+						<li><a href="${pageContext.request.contextPath}/admin/user">View Users</a></li>
+						<li><a href="${pageContext.request.contextPath}/admin/user/add">Add A New User</a></li>
 					</ul></li>
 				<li class="admin-theme"><a href="#"> Admin theme </a></li>
 			</ul>

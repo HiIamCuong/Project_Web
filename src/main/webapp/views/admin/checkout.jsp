@@ -44,7 +44,7 @@
 											</button>
 										</div>
 										<form
-											action="${pageContext.request.contextPath}/checkout/updateaddress"
+											action="${pageContext.request.contextPath}/admin/checkout/updateaddress"
 											method="post">
 											<div id="myDiv2" style="display: none;">
 												<div class="form-group address-edit-form">
@@ -107,7 +107,7 @@
 												<td class="goods-page-description">
 													<p>Material: ${cartItem.product.material}</p>
 													<p>Color: ${cartItem.product.color}</p>
-													<p>Size: height: ${cartItem.size}</p>
+													<p>Size: ${cartItem.size}</p>
 												</td>
 												<td class="goods-page-price"><p>${cartItem.quantity}</p></td>
 												<td class="goods-page-price"><p>${cartItem.product.price}</p>
@@ -120,7 +120,7 @@
 								</div>
 							</div>
 						</div>
-						<form action="${pageContext.request.contextPath}/order"
+						<form action="${pageContext.request.contextPath}/admin/order"
 							id="orderForm" method="post">
 							<input type="hidden" name="user_id" id="user_id"
 								value="${sessionScope.account.id}">
@@ -301,6 +301,6 @@ document.getElementById("orderForm").addEventListener("submit", function (event)
 	}
 
 	function cancelOrder() {
-		window.location.href = "${pageContext.request.contextPath}/cart";
+		window.location.href = "${pageContext.request.contextPath}/admin/cart";
 	}
 </script>
