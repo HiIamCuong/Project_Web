@@ -97,7 +97,7 @@
 											<tr>
 												<td class="goods-page-image"><a href="#"> <c:if
 															test="${cartItem.product.image.substring(0,5) != 'https'}">
-															<c:url value="/image?fname=${cartItem.product.image}"
+															<c:url value="/${cartItem.product.image}"
 																var="imgUrl"></c:url>
 														</c:if> <c:if
 															test="${cartItem.product.image.substring(0,5) == 'https'}">
@@ -135,7 +135,7 @@
 														<tr>
 															<td class="goods-page-image"><c:if
 																	test="${payment.image.substring(0,5) != 'https'}">
-																	<c:url value="/image?fname=${payment.image}"
+																	<c:url value="/${payment.image}"
 																		var="imgUrl"></c:url>
 																</c:if> <c:if test="${payment.image.substring(0,5) == 'https'}">
 																	<c:url value="${payment.image}" var="imgUrl"></c:url>

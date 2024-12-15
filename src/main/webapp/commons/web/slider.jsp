@@ -28,7 +28,7 @@
           scalein: .5; 
           scaleout: .5; 
           showuntil: 4000;">
-				Cozy Conner
+				Craft Corner
 			</div>
 
 			<div class="ls-l ls-mini-text"
@@ -41,7 +41,7 @@
           delayin: 300; 
           showuntil: 4000;
           ">
-				Cozy Conner provides a diverse selection 
+				Craft Corner provides a diverse selection 
 				<br>of furniture to meet the needs of a broad customer base.
 			</div>
 		</div>
@@ -51,7 +51,7 @@
 		<div class="ls-slide ls-slide2"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
 
-			<img src="${URL}assets/frontend/pages/img/layerslider/slide2/bg_slide.jpg"
+			<img src="${URL}assets/frontend/pages/img/layerslider/slide2/bg_slide2.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"

@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet(urlPatterns = {"/changePassword", "/admin/changePassword"})
+@WebServlet(urlPatterns = {"/changePassword"})
 public class ChangePasswordController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private IUserService userService = new UserService(); // Tạo đối tượng UserService

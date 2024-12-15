@@ -11,7 +11,11 @@
  			<property name="jakarta.persistence.jdbc.url" value="jdbc:sqlserver://localhost:54390;databaseName=ProjectWeb" /> 
  			<property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" /> 
  			<property name="jakarta.persistence.jdbc.user" value="sa" /> 
+<<<<<<< HEAD
 			<property name="jakarta.persistence.jdbc.password" value="danhtan" /> 
+=======
+			<property name="jakarta.persistence.jdbc.password" value="yenkhang" /> 
+>>>>>>> 00d50b6c6e8b4b049de1d411c65a8ce47db181e8
 			
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />

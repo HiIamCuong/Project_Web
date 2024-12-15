@@ -2,6 +2,7 @@ package UTESHOP.controllers;
 
 import java.io.IOException;
 
+
 import UTESHOP.entity.Address;
 import UTESHOP.entity.User;
 import UTESHOP.services.IUserService;
@@ -14,7 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = { "/myaccount","/admin/myaccount"})
+@WebServlet(urlPatterns = { "/myaccount"})
 public class AccountController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public IUserService userService = new UserService();
