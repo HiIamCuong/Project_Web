@@ -62,6 +62,15 @@ public class Product implements Serializable {
 	@Column(name = "size", columnDefinition = "NVARCHAR(100) NULL")
 	private String size;
 	
+	@Column(name = "height")
+	private Float height;
+
+	@Column(name = "length")
+	private Float length;
+
+	@Column(name = "width")
+	private Float width;
+
 	
 	// bi-directional many-to-one association to Category
 	@ManyToOne
@@ -192,4 +201,29 @@ public String getDescription() {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+	public Float getHeight() {
+	    return height != null ? height : 0.0f; // Trả về 0.0 nếu height là null
+	}
+
+	public void setHeight(Float height) {
+	    this.height = height;
+	}
+
+	public Float getLength() {
+	    return length != null ? length : 0.0f;
+	}
+
+	public void setLength(Float length) {
+	    this.length = length;
+	}
+
+	public Float getWidth() {
+	    return width != null ? width : 0.0f;
+	}
+
+	public void setWidth(Float width) {
+	    this.width = width;
+	}
+
 }

@@ -43,19 +43,21 @@
 
 		<!-- BEGIN CART -->
 		<div class="top-cart-block">
-		    <div class="top-cart-info">
-		        <c:choose>
-		            <c:when test="${sessionScope.cartItemCount != null && sessionScope.cartItemCount > 0}">
-		                <a href="${pageContext.request.contextPath}/admin/cart"
-		                   class="top-cart-info-count">${sessionScope.cartItemCount} items</a>
-		            </c:when>
-		            <c:otherwise>
-		                <a href="${pageContext.request.contextPath}/admin/cart"
-		                   class="top-cart-info-count">0 items</a>
-		            </c:otherwise>
-		        </c:choose>
-		    </div>
-		    <i class="fa fa-shopping-cart" style="background-color: black"></i>
+			<div class="top-cart-info">
+				<c:choose>
+					<c:when
+						test="${sessionScope.cartItemCount != null && sessionScope.cartItemCount > 0}">
+						<a href="${pageContext.request.contextPath}/admin/cart"
+							class="top-cart-info-count">${sessionScope.cartItemCount}
+							items</a>
+					</c:when>
+					<c:otherwise>
+						<a href="${pageContext.request.contextPath}/admin/cart"
+							class="top-cart-info-count">0 items</a>
+					</c:otherwise>
+				</c:choose>
+			</div>
+			<i class="fa fa-shopping-cart" style="background-color: black"></i>
 		</div>
 		<!-- END CART -->
 
@@ -71,8 +73,7 @@
 
 				<li><a href="#"> Order Management </a>
 					<ul class="dropdown-menu">
-						<li><a href="/kiemtraJDBC/views/admin/categorylist.jsp">View Orders</a></li>
-						<li><a href="/kiemtraJDBC/views/admin/categoryadd.jsp">Add Orders?nên có cái này ko? (Mi)</a></li>
+						<li><a href="/kiemtraJDBC/views/admin/categorylist.jsp">View Orders</a></li>						
 						<li><a href="/kiemtraJDBC/views/admin/categoryedit.jsp"></a></li>
 					</ul></li>
 				<li><a href="${pageContext.request.contextPath}/admin/user"> User Management </a>

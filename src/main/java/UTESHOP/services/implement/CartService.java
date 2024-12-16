@@ -17,4 +17,9 @@ public class CartService implements ICartService {
 		cartDao.delete(id);
 	}
 
+	@Override
+	public void insert(Cart cart) {
+		cartDao.insert(cart);
+	}
+
 }

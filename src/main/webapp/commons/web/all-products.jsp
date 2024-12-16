@@ -33,7 +33,11 @@
                             </div>
                             <h3><a href="shop-item.html">${product.name}</a></h3>
                             <div class="pi-price">${product.price}VND</div>
-                            <a href="#" class="btn btn-default add2cart">Add to cart</a>
+                             <!-- Form for POST method to add to cart -->
+                            <form action="${pageContext.request.contextPath}/addtocart" method="POST">
+                                <input type="hidden" name="id" value="${product.product_id}">
+                                <button type="submit" class="btn btn-default add2cart">Add to cart</button>
+                            </form>
                         </div>
                     </div>
                 </c3:forEach>
@@ -42,3 +46,8 @@
     </div>
 </body>
 </html>
+<script>
+function addtoCartId(productId) {
+        window.location.href = '${pageContext.request.contextPath}/addtocart?id=' + productId;
+    }
+</script> 

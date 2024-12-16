@@ -36,4 +36,9 @@ public class CartItemService implements ICartItemService {
 		cartItemDao.update(cartItem);
 	}
 
+	@Override
+	public void insert(CartItem cartItem) {
+		cartItemDao.insert(cartItem);
+	}
+
 }

@@ -12,6 +12,6 @@ public interface ICartItemService {
 	void delete(int id) throws Exception;
 	
 	CartItem findById(int id);
-
+	void insert(CartItem cartItem);
 	void update(CartItem cartItem);
 }
