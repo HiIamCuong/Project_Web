@@ -12,7 +12,7 @@
 		<div class="ls-slide ls-slide1"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 24,25,27,28;">
 
-			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/bg_slide1.jpg"
+			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/48409fc75d7ebcde378325af146e38d8.jpg_720x720q80.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"
@@ -28,7 +28,7 @@
           scalein: .5; 
           scaleout: .5; 
           showuntil: 4000;">
-				Cozy Conner
+				UTE SHOP
 			</div>
 
 			<div class="ls-l ls-mini-text"
@@ -41,7 +41,7 @@
           delayin: 300; 
           showuntil: 4000;
           ">
-				Cozy Conner provides a diverse selection 
+				UTE SHOP provides a diverse selection 
 				<br>of furniture to meet the needs of a broad customer base.
 			</div>
 		</div>
@@ -51,7 +51,7 @@
 		<div class="ls-slide ls-slide2"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
 
-			<img src="${URL}assets/frontend/pages/img/layerslider/slide2/bg_slide.jpg"
+			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/lovepik-creative-office-study-desktop-pat-picture_500321787.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"
@@ -111,7 +111,7 @@
 		<div class="ls-slide ls-slide3"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 92,93,105;">
 
-			<img src="${URL}assets/frontend/pages/img/layerslider/slide3/bg_slide3.jpg"
+			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/pexels-pixabay-159497.jpg"
 				class="ls-bg" alt="Slide background">
 			
 			
@@ -164,7 +164,7 @@
 		<div class="ls-slide ls-slide4"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
 
-			<img src="${URL}assets/frontend/pages/img/layerslider/slide4/bg_slide4.jpg"
+			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/tay_campus.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"
