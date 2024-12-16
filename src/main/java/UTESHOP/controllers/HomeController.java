@@ -47,9 +47,16 @@ public class HomeController extends HttpServlet {
 		}
 		// Fetch the product list from the database
         List<Product> products = productService.getAllProducts();
-
+        //Fetch best-selling products
+        List<Product> bestSellingProducts = productService.getBestSellingProducts();
+        
+        
         // Set the products as a request attribute so it can be accessed in JSP
         req.setAttribute("products", products);
+        // Set the best-selling products as a request attribute
+        req.setAttribute("bestSellingProducts", bestSellingProducts);
+        
+        
 		req.getSession().setAttribute("cartItemCount", cartItemCount);
 		req.getRequestDispatcher(Constant.HOME).forward(req, resp);
 	}

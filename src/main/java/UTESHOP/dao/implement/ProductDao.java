@@ -1,5 +1,6 @@
 package UTESHOP.dao.implement;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import UTESHOP.configs.JPAConfig;
@@ -101,11 +102,11 @@ public class ProductDao implements IProductDao {
 
 	@Override
 	public List<Product> findAll(int page, int pagesize) {
-		EntityManager enma = JPAConfig.getEntityManager();
-		TypedQuery<Product> query = enma.createNamedQuery("Product.findAll", Product.class);
-		query.setFirstResult((page - 1) * pagesize);
-		query.setMaxResults(pagesize);
-		return query.getResultList();
+		EntityManager em = JPAConfig.getEntityManager();
+	    return em.createQuery("SELECT p FROM Product p", Product.class)
+	             .setFirstResult((page - 1) * pagesize)
+	             .setMaxResults(pagesize)
+	             .getResultList();
 	}
 
 	@Override
@@ -206,5 +207,30 @@ public class ProductDao implements IProductDao {
 			em.close();
 		}
 	}
-
+	
+	@Override
+	public List<Product> getBestSellingProducts() {
+	    EntityManager entityManager = JPAConfig.getEntityManager();
+	    try {
+	        // Adjust the field name based on your actual entity definition
+	        String jpql = "SELECT p FROM Product p WHERE p.isBestSeller = true"; // or use the correct field name
+	        TypedQuery<Product> query = entityManager.createQuery(jpql, Product.class);
+	        return query.getResultList();
+	    } finally {
+	        entityManager.close();
+	    }
+	}
+	
+	@Override
+	public List<Product> getNewArrivalProducts() {
+	    EntityManager entityManager = JPAConfig.getEntityManager();
+	    try {
+	        // Adjust JPQL if using JPQL or use native SQL if needed
+	        String jpql = "SELECT * FROM products WHERE createDate > DATEADD(DAY, -30, GETDATE())";
+	        TypedQuery<Product> query = entityManager.createQuery(jpql, Product.class);
+	        return query.getResultList();
+	    } finally {
+	        entityManager.close();
+	    }
+	}
 }

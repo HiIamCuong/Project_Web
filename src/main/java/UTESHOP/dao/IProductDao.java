@@ -1,5 +1,6 @@
 package UTESHOP.dao;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import UTESHOP.entity.Product;
@@ -23,4 +24,6 @@ public interface IProductDao {
     List<Product> getNewArrivals();
     Product getProductById(int productId);
     List<Product> getRelatedProducts(int productId);
+    List<Product> getBestSellingProducts();
+    List<Product> getNewArrivalProducts(); // Add this method
 }

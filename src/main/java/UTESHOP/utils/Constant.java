@@ -34,4 +34,6 @@ public class Constant {
 	public static final String UPLOAD_DIRECTORY = "C:\\upload";
 	public static final String DEFAULT_FILENAME = "default.file";
 	public static final String PRODUCTS = "/views/shop-item.jsp";
+	public static final String SEARCH_RESULT = "/views/search-results.jsp";
+	public static final String NEW_ARRIVAL = "/web/new-arrival.jsp";
 }

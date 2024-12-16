@@ -34,4 +34,8 @@ public interface IProductService {
 	List<Product> getRelatedProducts(int productId);
 
 	Product getProductById(int productId);
+	
+	List<Product> getBestSellingProducts();
+	
+	List<Product> getNewArrivalProducts(); // Add this method
 }

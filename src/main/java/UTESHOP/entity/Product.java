@@ -62,6 +62,18 @@ public class Product implements Serializable {
 	@Column(name = "size", columnDefinition = "NVARCHAR(100) NULL")
 	private String size;
 	
+	@Column(name = "height")
+	private float height;
+	
+	@Column(name = "length")
+	private float length;
+	
+	@Column(name = "width")
+	private float width;
+	
+	// Change from boolean to Boolean to allow null values
+	@Column(name = "is_best_seller")
+	private Boolean isBestSeller;
 	
 	// bi-directional many-to-one association to Category
 	@ManyToOne
@@ -185,6 +197,30 @@ public String getDescription() {
 		this.size = size;
 	}
 
+	public float getHeight() {
+		return height;
+	}
+
+	public void setHeight(float height) {
+		this.height = height;
+	}
+
+	public float getLength() {
+		return length;
+	}
+
+	public void setLength(float length) {
+		this.length = length;
+	}
+
+	public float getWidth() {
+		return width;
+	}
+
+	public void setWidth(float width) {
+		this.width = width;
+	}
+	
 	public Category getCategory() {
 		return category;
 	}
@@ -192,4 +228,12 @@ public String getDescription() {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+	
+	public Boolean getIsBestSeller() {
+        return isBestSeller;
+    }
+
+    public void setIsBestSeller(Boolean isBestSeller) {
+        this.isBestSeller = isBestSeller;
+    }
 }
