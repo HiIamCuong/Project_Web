@@ -104,6 +104,6 @@ Exception Flow(s):	E2: Nếu hệ thống gặp lỗi kỹ thuật, hệ thống
 PHÂN CÔNG
 Thành viên	Nhiệm vụ
 Nguyễn Yên Khang	Tìm kiếm và lọc sản phẩm, Xem tất cả sản phẩm, Xem chi tiết sản phẩm, Xem gợi ý sản phẩm bán chạy, Xem gợi ý sản phẩm liên quan, báo cáo
-Trần Danh Tân	lịch sử mua hàng theo trạng thái (đơn hàng mới, đã xác nhận, đang giao, đã giao, hủy, trả hàng- hoàn tiền), tạo chương trình khuyến mãi, quản lý doanh thu của shop, báo cáo
+Trần Danh Tân	lịch sử mua hàng, tạo chương trình khuyến mãi, quản lý doanh thu của shop, báo cáo
 Phù Ngọc Dương	Xem thông tin tài khoản, sửa tài khoản, thay đổi avatar, thay đỏi password, xóa tài khoản, Quên mật khẩu có gửi mã OTP, Xem các sản phẩm trong giỏ hàng, sửa số lượng sản phẩm, xóa sản phẩm trong giỏ, xóa giỏ hàng, báo cáo
 Nguyễn Sỹ Cường	Đăng nhập, Đăng ký, Thanh toán, mã giảm giá, Tổng hợp báo cáo
