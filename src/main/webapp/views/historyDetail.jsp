@@ -12,18 +12,27 @@
     <h1>Order Details</h1>
 
     <!-- Hiển thị danh sách chi tiết đơn hàng -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Order Detail ID</th>
-                <th>Product Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Size</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="detail" items="${orderDetails}">
+    <table class="table table-striped table-bordered table-hover" id="datatable_products">
+	<thead>
+	<tr role="row" class="heading">
+				<th width="10%">
+								 Order Detail ID
+				</th>
+				<th width="15%">
+								 Product Name
+				</th>
+				<th width="10%">
+								 Quantity
+				</th>
+				<th width="15%">
+								 Price
+				</th>
+				<th width="15%">
+								 Size
+				</th>
+	</tr>
+	<tr role="row" class="filter">
+			<c:forEach var="detail" items="${orderDetails}">
                 <tr>
                     <td>${detail.orderDetail_id}</td>
                     <td>${detail.product.name}</td>
@@ -31,9 +40,14 @@
                     <td>${detail.price}</td>
                     <td>${detail.size}</td>
                 </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+            </c:forEach>				
+	</tr>
+	</thead>
+	<tbody>
+	</tbody>
+	</table>
+    
+    
 
     <button onclick="window.history.back()">Back to Orders</button>
 

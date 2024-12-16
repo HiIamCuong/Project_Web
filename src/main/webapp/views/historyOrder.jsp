@@ -13,22 +13,29 @@
     <h1>Order History</h1>
 
     <!-- Hiển thị danh sách đơn hàng -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>Customer Name</th>
-                <th>Total Price</th>
-                <th>Order Date</th>
-                <th>Note</th>
-                <th>Actions</th> <!-- Thêm cột hành động -->
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="order" items="${orders}">
+    <table class="table table-striped table-bordered table-hover" id="datatable_products">
+	<thead>
+	<tr role="row" class="heading">
+				<th width="10%">
+								 Order ID
+				</th>
+				<th width="10%">
+								 Total Price
+				</th>
+				<th width="15%">
+								 Order Date
+				</th>
+				<th width="15%">
+								 Size
+				</th>
+				<th width="15%">
+								 Actions
+				</th>
+	</tr>
+	<tr role="row" class="filter">
+			<c:forEach var="order" items="${orders}">
                 <tr>
                     <td>${order.order_id}</td>
-                    <td>${order.user.name}</td>
                     <td>${order.total_price}</td>
                     <td>${order.order_date}</td>
                     <td>${order.note}</td>
@@ -40,8 +47,13 @@
                         </form>
                     </td>
                 </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+            </c:forEach>				
+	</tr>
+	</thead>
+	<tbody>
+	</tbody>
+	</table>
+	
+    
 </body>
 </html>

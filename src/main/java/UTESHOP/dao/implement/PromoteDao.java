@@ -79,21 +79,23 @@ public class PromoteDao implements IPromoteDao {
 	}
 
 	@Override
-	public void delete(Promote promote) {
+	public void delete(int id) {
 		EntityManager enma = JPAConfig.getEntityManager();
-		EntityTransaction trans = enma.getTransaction();
-		try {
-			trans.begin();
-			promote = enma.merge(promote);
-			enma.remove(promote);
-			trans.commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-			trans.rollback();
-			throw e;
-		} finally {
-			enma.close();
-		}
+	    EntityTransaction trans = enma.getTransaction();
+	    try {
+	        trans.begin();
+	        Promote promote = enma.find(Promote.class, id);
+	        if (promote != null) {
+	            enma.remove(promote);
+	        }
+	        trans.commit();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        trans.rollback();
+	        throw e;
+	    } finally {
+	        enma.close();
+	    }
 	}
 
 	@Override

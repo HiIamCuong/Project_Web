@@ -50,16 +50,19 @@
 
 		<!-- BEGIN NAVIGATION -->
 		<div class="header-navigation">
-			<ul>
-				<li><a href="#"> Shop </a></li>
-				<li><a href="#"> Blogs </a></li>
-				<li><a href="#"> Design ideas </a></li>
-				<!-- BEGIN search-button -->
-<%@ include file="/commons/web/search-button.jsp"%>
-<!-- END search-button -->
-			</ul>
+		    <ul>
+		        <li><a href="#"> Shop </a></li>
+		        <li><a href="#"> Blogs </a></li>
+		        <li><a href="#"> Design ideas </a></li>
+		        <!-- Thêm mục History -->
+		        <li><a href="${pageContext.request.contextPath}/views/history">History</a></li> <!-- Liên kết đến trang History -->
+		        <!-- BEGIN search-button -->
+		        <%@ include file="/commons/web/search-button.jsp"%>
+		        <!-- END search-button -->
+		    </ul>
 		</div>
 		<!-- END NAVIGATION -->
+
 	</div>
 </div>
 <!-- Header END -->

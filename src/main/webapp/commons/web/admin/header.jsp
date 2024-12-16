@@ -81,9 +81,11 @@
 						<li><a href="${pageContext.request.contextPath}/admin/user/add">Add A New User</a></li>
 					</ul></li>
 				<li><a href="#"> Admin Theme </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="${pageContext.request.contextPath}/views/admin/revenue.jsp">Revenue</a></li>
-                    </ul></li>
+				    <ul class="dropdown-menu">
+				        <li><a href="${pageContext.request.contextPath}/views/admin/revenue.jsp">Revenue</a></li>
+				        <li><a href="${pageContext.request.contextPath}/views/admin/promote">Promote</a></li>
+				    </ul>
+				</li>
 			</ul>
 		</div>
 		<!-- END NAVIGATION -->

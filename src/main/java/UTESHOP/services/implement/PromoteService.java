@@ -35,8 +35,8 @@ public class PromoteService implements IPromoteService{
 	}
 
 	@Override
-	public void delete(Promote promote) {
-		promoteDao.delete(promote);
+	public void delete(int id) {
+		promoteDao.delete(id);
 	}
 
 	@Override

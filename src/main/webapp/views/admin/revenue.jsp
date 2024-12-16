@@ -43,23 +43,44 @@
 
         <button type="submit">Get revenue</button>
     </form>
-	<p>Total Revenue: ${totalRevenue}</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Time</th>
-                <th>Revenue</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="stat" items="${statistics}">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<div class="dashboard-stat red-intense">
+					<div class="visual">
+						<i class="fa fa-shopping-cart"></i>
+					</div>
+					<div class="details">
+						<div class="number">
+							 ${totalRevenue}
+						</div>
+						<div class="desc">
+							Total Revenue
+						</div>
+					</div>					
+				</div>
+	</div>
+	<table class="table table-striped table-bordered table-hover" id="datatable_products">
+	<thead>
+	<tr role="row" class="heading">
+				<th width="10%">
+								 Time
+				</th>
+				<th width="15%">
+								 Revenue
+				</th>
+	</tr>
+	<tr role="row" class="filter">
+			<c:forEach var="stat" items="${statistics}">
                 <tr>
                     <td>${stat[0]}</td> <!-- Label -->
                     <td>${stat[1]}</td> <!-- Value -->
                 </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+            </c:forEach>				
+	</tr>
+	</thead>
+	<tbody>
+	</tbody>
+	</table>
+
+    
 </body>
 </html>
