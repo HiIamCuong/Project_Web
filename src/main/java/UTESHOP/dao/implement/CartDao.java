@@ -47,4 +47,21 @@ public class CartDao implements ICartDao {
 		}
 	}
 
+	@Override
+	public void insert(Cart cart) {
+		EntityManager enma = JPAConfig.getEntityManager();
+		EntityTransaction trans = enma.getTransaction();
+		try {
+			trans.begin();
+			enma.persist(cart);
+			trans.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			trans.rollback();
+			throw e;
+		} finally {
+			enma.close();
+		}
+	}
+
 }

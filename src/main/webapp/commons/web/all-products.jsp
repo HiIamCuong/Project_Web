@@ -22,6 +22,7 @@
                                     <img src="/images/default-product.jpg" class="img-responsive product-image" alt="Default Product Image" />
                                 </c:otherwise>
                             </c:choose>
+
                         </div>
                         <h3><a href="shop-item.html">${product.name}</a></h3>
                         <div class="pi-price">${product.price} VND</div>
@@ -31,6 +32,7 @@
             </c:forEach>
         </div>
     </div>
+
 </div>
 
 <style>
@@ -41,3 +43,12 @@
         border-radius: 5px; /* Optional: add border radius for a softer look */
     }
 </style>
+
+</body>
+</html>
+<script>
+function addtoCartId(productId) {
+        window.location.href = '${pageContext.request.contextPath}/addtocart?id=' + productId;
+    }
+</script> 
+

@@ -63,6 +63,7 @@ public class Product implements Serializable {
 	private String size;
 	
 	@Column(name = "height")
+
 	private float height;
 	
 	@Column(name = "length")
@@ -74,6 +75,7 @@ public class Product implements Serializable {
 	// Change from boolean to Boolean to allow null values
 	@Column(name = "is_best_seller")
 	private Boolean isBestSeller;
+
 	
 	// bi-directional many-to-one association to Category
 	@ManyToOne
@@ -228,6 +230,7 @@ public String getDescription() {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
 	
 	public Boolean getIsBestSeller() {
         return isBestSeller;
@@ -236,4 +239,5 @@ public String getDescription() {
     public void setIsBestSeller(Boolean isBestSeller) {
         this.isBestSeller = isBestSeller;
     }
+
 }

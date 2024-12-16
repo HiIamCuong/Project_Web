@@ -12,7 +12,7 @@
 		<div class="ls-slide ls-slide1"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 24,25,27,28;">
 
-			<img src="${URL}assets/img/product/sach_a5.jpg"
+			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/48409fc75d7ebcde378325af146e38d8.jpg_720x720q80.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"
@@ -28,7 +28,7 @@
           scalein: .5; 
           scaleout: .5; 
           showuntil: 4000;">
-				UTESHOP
+				UTE SHOP
 			</div>
 
 			<div class="ls-l ls-mini-text"
@@ -41,8 +41,8 @@
           delayin: 300; 
           showuntil: 4000;
           ">
-				UTESHOP provides a diverse selection 
-				<br>of School items to meet the needs of a broad customer base.
+				UTE SHOP provides a diverse selection 
+				<br>of furniture to meet the needs of a broad customer base.
 			</div>
 		</div>
 		<!-- slide one end -->
@@ -51,7 +51,7 @@
 		<div class="ls-slide ls-slide2"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
 
-			<img src="${URL}assets/img/product/butchi_mau.jpg"
+			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/lovepik-creative-office-study-desktop-pat-picture_500321787.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"
@@ -96,8 +96,8 @@
           durationout: 750; 
           easingin: easeOutQuint; 
           easingout: easeInOutQuint; 
-          delayin: 0; 
-          delayout: 0; 
+          delayin: 0;
+delayout: 0; 
           rotatein: 90; 
           rotateout: -90; 
           scalein: .5; 
@@ -111,7 +111,7 @@
 		<div class="ls-slide ls-slide3"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 92,93,105;">
 
-			<img src="${URL}assets/img/product/But_Ky.jpg"
+			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/pexels-pixabay-159497.jpg"
 				class="ls-bg" alt="Slide background">
 			
 			
@@ -154,7 +154,7 @@
           ">
 				<a href="#" class="ls-buy" style="background-color:black; border:black;"> Buy It Now! </a>
 				<div class="ls-price">
-					<span>All these from:</span> <strong>25000<sup>VND</sup></strong>
+					<span>All these from:</span> <strong>25<sup>$</sup></strong>
 				</div>
 			</div>
 		</div>
@@ -164,7 +164,7 @@
 		<div class="ls-slide ls-slide4"
 			data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
 
-			<img src="${URL}assets/img/product/Spring Note.jpg"
+			<img src="${URL}assets/frontend/pages/img/layerslider/slide1/tay_campus.jpg"
 				class="ls-bg" alt="Slide background">
 
 			<div class="ls-l ls-title"
@@ -180,7 +180,7 @@
           scalein: .5; 
           scaleout: .5; 
           showuntil: 4000;">
-				Popular school items
+				Popular furniture items
 			</div>
 
 			<div class="ls-l ls-mini-text"
