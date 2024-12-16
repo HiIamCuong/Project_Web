@@ -1,10 +1,13 @@
 package UTESHOP.dao.implement;
 
+import java.util.List;
+
 import UTESHOP.configs.JPAConfig;
 import UTESHOP.dao.IOrderDetailDao;
 import UTESHOP.entity.OrderDetail;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Query;
 
 public class OrderDetailDao implements IOrderDetailDao {
 
@@ -24,5 +27,17 @@ public class OrderDetailDao implements IOrderDetailDao {
 			enma.close();
 		}
 	}
-
+	
+	@SuppressWarnings("unchecked")
+	public List<OrderDetail> findByOrderId(int orderId) {
+        EntityManager em = JPAConfig.getEntityManager();
+        try {
+            String jpql = "SELECT od FROM OrderDetail od WHERE od.order.order_id = :orderId";
+            Query query = em.createQuery(jpql, OrderDetail.class);
+            query.setParameter("orderId", orderId);
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
+    }
 }

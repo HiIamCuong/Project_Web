@@ -16,7 +16,7 @@ public interface IPromoteDao {
 
 	void update(Promote promote);
 
-	void delete(Promote promote);
+	void delete(int id);
 
 	List<Promote> findByVoucherCodeOrPercent(String voucherCode, Integer discountPercent);
 }
